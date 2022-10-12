@@ -22,17 +22,7 @@ function wpbt_coba_productedit()
 </header>
 
 <?php 
-    
-
-    // $postshort = $_POST['short_description'];
-    // $txtDistributionCountries = $_POST['txtDistributionCountries'];
-    // $ddlDistributionRegion = $_POST['ddlDistributionRegion'];
-    // $txtVideoLink = $_POST['txtVideoLink'];
-    // $condition1 = $_POST['condition1'];
-    // $condition2 = $_POST['condition2'];
-    
-    // $submit = $_POST['submit'];
-
+	
     if( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) &&  $_POST['action'] == "new_post") {
 
         // if(isset($submit)){
@@ -157,9 +147,9 @@ function wpbt_coba_productedit()
             update_post_meta($post_id, "condition1", $_POST['condition1'], true);
             update_post_meta($post_id, "condition2", $_POST['condition2'], true);
             echo "<script>
-					alert('Data saved');
-					window.location.href='/SIT/eria/dashboard-members/product-list/';
-					</script>";
+		alert('Data saved');
+		window.location.href='/SIT/eria/dashboard-members/product-list/';
+		</script>";
             // echo "New successfully added";
 
         // }
@@ -174,91 +164,14 @@ function wpbt_coba_productedit()
         <!-- Pilih kategori -->
         <div class="sui-col-md-3">
             <div class="sui-box">
-                <div class="sui-box-header" style="display: none;">
-                <h3>Active Categories</h3>
-                <!-- <!?php echo get_user_meta( wp_get_current_user()->ID, 'company_country', true);?> -->
-                    <?php
-						// $category_detail=get_the_terms($_GET['id'], 'categori');//$post->ID
-						// // print_r($category_detail);
-						// $myArray = array();
-						// foreach($category_detail as $cd){
-						// 	// $myArray[] = '<span>'.ucfirst($cd->name).'</span>';
-						// 	$cetak_nama = $cd->name;
-						// 	echo $cetak_nama;
-						// 	// rtrim($cetak_nama,", ");
-						// 	// echo '<input hidden type="text" name="categori[]" value="'.$cetak_nama.'">';
-                        // }
-                        // echo implode( ', ', $myArray );
-
-                        // $category_detail=get_the_terms($_GET['id'], 'categori');
-                        // foreach ($category_detail as $term) {
-                        //     if( $term->parent == 0 ) {
-                        //         $name = $term->name;
-                        //         echo $name;
-                        //       }
-                        // }
-                        // $myArray = array();
-                        // foreach ($category_detail as $term) {
-                        //     if( $term->parent != 0 ) {
-                        //         $myArray[] = '<span>'.ucfirst($term->name).'</span>';
-                        //       }
-                        // }
-                        // echo implode( ', ', $myArray );
-
-
-                        // $myArray = array();
-                        // foreach($category_detail as $cd){
-                        //     $myArray[] = '<span>'.ucfirst($cd->name).'</span>';
-                        // }
-                        // echo implode( ', ', $myArray );
-
-
-
-                        // $category_detail=get_the_terms($_GET['id'], 'categori');
-                        // $myArray = array();
-                        // foreach($category_detail as $cd){
-                        //     $cetak_nama = $cd->name;
-						// 	echo $cetak_nama;
-                        // }
-                        // $oke = implode( ', ', $myArray );
-                        // var_dump($oke);
-
-
-                        // $Parentcatargs = array(
-                        //     'orderby' => 'name',
-                        //     'order' => 'ASC',
-                        //     'use_desc_for_title' => 1,
-                        //     'hide_empty' => 0,
-                        //     'parent' => '0',
-                        //     'type'                     => 'job',
-                        //     'child_of'                 => 0,
-                        //     'taxonomy'                 => 'categori'
-                        // );
-                        //     $allcategory = get_categories($Parentcatargs); 
-                        //     foreach ($allcategory as $category) {
-                        //     ?!>
-                        //     <a class="btn">
-                        //         <?php 
-                        //             $cetak = $category->cat_name;
-                              
-                        //             // if($cetak==$oke){
-                        //             //     echo $category_detail.' aktif';
-                        //             // }else{
-                        //             //     echo $cetak.' not active';
-                        //             // }
-                        //         ?!>
-                        //     </a>
-                        //     <?php 
-                        // }
-
-
-
-
-                    ?>
-                </div>
                 <div class="sui-box-body">
                     <h2 class="sui-box-title" style="font-size: 20px; padding-bottom: 10px; border-bottom: 1px solid #888; margin-bottom: 10px;">Category</h2>
                     <div class="container-checkbox">
+			 
+			<!-- 
+ 			CHECK CATEGORY
+			-->
+			
                         <?php
                             $Parentcatargs = array(
                                 'orderby' => 'name',
@@ -371,6 +284,11 @@ function wpbt_coba_productedit()
                                 echo "</ul>";
                             }
                         ?>
+			     
+			<!-- 
+ 			END CHECK CATEGORY
+			-->
+			
                     </div>
                 </div>
             </div>
